@@ -1,0 +1,22 @@
+services:
+  db:
+    networks:
+      backend:
+        aliases:
+          - openproject-db
+
+  web:
+    environment:
+      DATABASE_URL: "postgres://postgres:p4ssw0rd@openproject-db/openproject?pool=20&encoding=unicode&reconnect=true"
+  
+  worker:
+    environment:
+      DATABASE_URL: "postgres://postgres:p4ssw0rd@openproject-db/openproject?pool=20&encoding=unicode&reconnect=true"
+
+  seeder:
+    environment:
+      DATABASE_URL: "postgres://postgres:p4ssw0rd@openproject-db/openproject?pool=20&encoding=unicode&reconnect=true"
+
+  cron:
+    environment:
+      DATABASE_URL: "postgres://postgres:p4ssw0rd@openproject-db/openproject?pool=20&encoding=unicode&reconnect=true"
