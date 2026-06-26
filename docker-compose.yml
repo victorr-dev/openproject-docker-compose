@@ -32,7 +32,7 @@ x-op-app: &app
     - "${OPDATA:-opdata}:/var/openproject/assets"
 
 services:
-  db:
+  db_openproject:
     # The default here should really be 17 but is still 13 as to not break existing setups.
     # New installations using the provided .env.example will use 17 to begin with.
     # The default here will change to 17 as well with the next major update (18).
